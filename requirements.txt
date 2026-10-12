@@ -1,6 +1,9 @@
-# Tested with Python 3.9 (pandas 2.2) and Python 3.14 (pandas 3.0)
+# 01_eda tested with Python 3.9 (pandas 2.2) and Python 3.14 (pandas 3.0)
+# 02_hypotheses tested with Python 3.14 (scikit-learn 1.9, statsmodels 0.14)
 pandas>=2.2
 numpy>=1.26
 matplotlib>=3.9
 pyarrow>=17
+scikit-learn>=1.3
+statsmodels>=0.14
 jupyter

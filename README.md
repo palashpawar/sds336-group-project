@@ -37,7 +37,8 @@ The raw data is too big for GitHub, so each person downloads it separately.
 data/raw/          original CSV (not in git; do not edit)
 data/processed/    cleaned / cached data (not in git)
 notebooks/
-  01_eda.ipynb     exploratory analysis
+  01_eda.ipynb          exploratory analysis (run first; builds the parquet cache)
+  02_hypotheses.ipynb   midterm checkpoint: five data-backed hypotheses
 figures/           charts saved by the notebooks
 assets/            images used in this README
 ```
@@ -50,6 +51,19 @@ See the end of [`01_eda.ipynb`](notebooks/01_eda.ipynb) for the full takeaways.
 - **Clearance depends heavily on crime type** (2009 onward): murder 94%, aggravated assault 55%, rape and robbery 38% each, and theft, burglary and auto theft 10-13%.
 - **Occurrence times are often placeholders.** 26% of incidents are logged exactly on the hour.
 - **UCR category exists only for Part I crimes** (37% of rows). Theft makes up 69% of those.
+
+## Midterm checkpoint hypotheses
+Full analysis in [`02_hypotheses.ipynb`](notebooks/02_hypotheses.ipynb).
+
+| # | Hypothesis | Key evidence | Method |
+|---|---|---|---|
+| H1 | Reporting delay lowers clearance beyond crime type | Odds ratio 0.42 per 10x longer delay, offense held fixed | Logistic regression |
+| H2 | A time rounded to `HH:00` marks an unwitnessed crime, which is cleared less often | Lower clearance in 10/10 offenses; odds ratio 0.61 after controlling for offense and delay | Anomaly analysis + logistic regression |
+| H3 | The post-2017 clearance decline is mostly within offenses, not a change in crime mix | 59% of the 2009-2021 drop remains with the mix held fixed | Direct standardization |
+| H4 | Family violence rises on holidays while other crime falls | Christmas: family violence +38%, other incidents -29% | Linear regression with fixed effects |
+| H5 | Neighborhoods vary along a commercial-to-domestic crime axis that relates to clearance | PC1 = 22% of variance; cluster clearance 13-23% | K-means + PCA |
+
+Tested and not supported: a family-violence spike during the 2020 lockdown (+2%, within noise).
 
 ## Possible project questions
 1. Predict whether a case is cleared (classification, 2009 onward)
