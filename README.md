@@ -1,7 +1,5 @@
 <p align="center">
-  <img src="assets/austin_logos.png" alt="City of Austin logo and seal" height="160">
-  &nbsp;&nbsp;&nbsp;
-  <img src="assets/apd_badge.png" alt="Austin Police Department badge" height="160">
+  <img src="assets/banner.png" alt="Austin Police Department badge, City of Austin logo and seal" width="720">
 </p>
 
 # SDS 336 Group Project: Austin Crime Reports
