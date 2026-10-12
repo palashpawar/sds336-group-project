@@ -1,8 +1,13 @@
+<p align="center">
+  <img src="assets/austin_logos.png" alt="City of Austin logo and seal" height="160">
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/apd_badge.png" alt="Austin Police Department badge" height="160">
+</p>
+
 # SDS 336 Group Project: Austin Crime Reports
 
 Analysis of Austin Police Department crime reports from 2003 to 2026, for SDS 336 at UT Austin.
-
-![When incidents occur: day of week x hour](figures/dow_hour_heatmap.png)
+This is a student project and is not affiliated with or endorsed by the City of Austin or APD.
 
 ## Dataset
 [Crime Reports](https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu), City of Austin Open Data Portal (public domain). This snapshot was downloaded 2026-10-12.
