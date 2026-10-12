@@ -24,7 +24,7 @@ The raw data is too big for GitHub, so each person downloads it separately.
    A newer export will have a different filename. Either rename it, or change `RAW` in the notebook's first code cell.
 3. Install the dependencies and open the notebook:
    ```bash
-   pip install pandas numpy matplotlib pyarrow jupyter
+   pip install -r requirements.txt
    jupyter notebook notebooks/01_eda.ipynb
    ```
    The first run reads the CSV (about 30 seconds) and caches a cleaned copy at `data/processed/crime.parquet`. Later runs load the cache, which is much faster.
