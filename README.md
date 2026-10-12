@@ -41,6 +41,7 @@ data/processed/    cleaned / cached data (not in git)
 notebooks/
   01_eda.ipynb     exploratory analysis
 figures/           charts saved by the notebooks
+assets/            images used in this README
 ```
 
 ## EDA highlights
