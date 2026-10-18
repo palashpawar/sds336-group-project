@@ -10,7 +10,7 @@ Analysis of Austin Police Department crime reports from 2003 to 2026, for SDS 33
 This is a student project and is not affiliated with or endorsed by the City of Austin or APD.
 
 ## Team
-Palash Pawar · Karthikaya Kasa · Varun Bandaru · Sai Koduri · Vinay Devarakonda · Saisarath Bolneni
+Palash Pawar · Karthik Kasa · Varun Bandaru · Sai Koduri · Vinay Devarakonda · Saisarath Bolneni
 
 ## Dataset
 [Crime Reports](https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu), City of Austin Open Data Portal (public domain). This snapshot was downloaded 2026-10-12.
