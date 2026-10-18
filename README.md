@@ -43,6 +43,7 @@ notebooks/
   01_eda.ipynb          exploratory analysis (run first; builds the parquet cache)
   02_hypotheses.ipynb   midterm checkpoint: five data-backed hypotheses
 figures/           charts saved by the notebooks
+docs/              midterm slides, served by GitHub Pages
 assets/            images used in this README
 ```
 
@@ -56,7 +57,7 @@ See the end of [`01_eda.ipynb`](notebooks/01_eda.ipynb) for the full takeaways.
 - **UCR category exists only for Part I crimes** (37% of rows). Theft makes up 69% of those.
 
 ## Midterm checkpoint hypotheses
-Full analysis in [`02_hypotheses.ipynb`](notebooks/02_hypotheses.ipynb).
+**Slides:** https://palashpawar.github.io/sds336-group-project/ · Full analysis in [`02_hypotheses.ipynb`](notebooks/02_hypotheses.ipynb).
 
 | # | Hypothesis | Key evidence | Method |
 |---|---|---|---|
