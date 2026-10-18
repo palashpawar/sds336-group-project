@@ -4,6 +4,8 @@
 
 # SDS 336 Group Project: Austin Crime Reports
 
+**📊 [View the midterm checkpoint slides](https://palashpawar.github.io/sds336-group-project/)**
+
 Analysis of Austin Police Department crime reports from 2003 to 2026, for SDS 336 at UT Austin.
 This is a student project and is not affiliated with or endorsed by the City of Austin or APD.
 
