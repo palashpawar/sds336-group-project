@@ -44,7 +44,8 @@ data/processed/    cleaned / cached data (not in git)
 notebooks/
   01_eda.ipynb          exploratory analysis (run first; builds the parquet cache)
   02_hypotheses.ipynb   midterm checkpoint: five data-backed hypotheses
-figures/           charts saved by the notebooks
+  03_modeling.ipynb     final project: predicting case clearance
+figures/           charts saved by the notebooks (final/ = final project)
 docs/              midterm slides, served by GitHub Pages
 assets/            images used in this README
 ```
@@ -70,6 +71,27 @@ See the end of [`01_eda.ipynb`](notebooks/01_eda.ipynb) for the full takeaways.
 | H5 | Neighborhoods vary along a commercial-to-domestic crime axis that relates to clearance | PC1 = 22% of variance; cluster clearance 13-23% | K-means + PCA |
 
 Tested and not supported: a family-violence spike during the 2020 lockdown (+2%, within noise).
+
+## Final project: predicting which cases get cleared
+Full analysis in [`03_modeling.ipynb`](notebooks/03_modeling.ipynb).
+
+- **Task:** binary classification. Will a victim-reported incident be cleared (arrest or exception), using only information known at intake?
+- **Data:** 1.42M incidents, 2009-2025. We drop 39 arrest-generated offenses (DWI, warrant arrests and similar), which are cleared 90-99% of the time by definition.
+- **Split by time:** train 2009-2019, tune on 2020-2021, test once on 2022-2025.
+- **Models:** an offense-only baseline, logistic regression, random forest and gradient boosting, each tuned on the validation years.
+
+| Model (test 2022-25) | PR-AUC | Top-20% capture | Within-offense AUC |
+|---|---|---|---|
+| Offense-only baseline | 0.446 | 56% | 0.500 |
+| Logistic regression | 0.521 | 65% | 0.727 |
+| Random forest | 0.552 | 65% | 0.731 |
+| **Gradient boosting** | **0.565** | **67%** | **0.735** |
+
+**Key findings:**
+- After crime type, **reporting delay** matters most. Predicted clearance drops sharply between 4 and 8 hours after the incident.
+- **Family-violence** cases have about 2.9× the odds of clearance for the same offense.
+- A **random split overstates performance**: PR-AUC is 0.70 with shuffled years vs. 0.57 on future years.
+- The model **ranks cases well, but its probabilities run high** on recent years, so they need recalibration before use.
 
 ## Possible project questions
 1. Predict whether a case is cleared (classification, 2009 onward)
